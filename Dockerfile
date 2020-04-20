@@ -8,7 +8,7 @@ COPY webadmin.ini.tpl /opt/
 
 WORKDIR /opt
 RUN apt-get update && apt-get install -y curl gettext-base && \
-    curl -sSfL https://download.cuberite.org | sh && \
+    curl -Ls https://download.cuberite.org/linux-armhf-raspbian/Cuberite.tar.gz | tar -xzf - && \
     mv Server cuberite
 
 WORKDIR /opt/cuberite
